@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    margin: 0;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    background: white;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 2px solid #333;
+    padding: 30px;
+    background: #f8f9fa;
+}
+.title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #3498db;
+}
+.input-group {
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+}
+.label {
+    font-size: 18px;
+    font-weight: bold;
+    width: 120px;
+    color: #34495e;
+}
+.input-box {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #bdc3c7;
+    background: white;
+    font-size: 14px;
+    margin-right: 10px;
+}
+.browse-btn {
+    padding: 12px 25px;
+    background: #95a5a6;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.compare-btn {
+    display: block;
+    width: 300px;
+    margin: 40px auto;
+    padding: 18px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.options {
+    margin-top: 30px;
+    padding: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.options h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+.checkbox {
+    margin: 10px 0;
+    font-size: 16px;
+}
+.checkbox input {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="title">LHDiff - Line History Tracker</div>
+    
+    <div class="input-group">
+        <div class="label">Old File:</div>
+        <div class="input-box">C:/projects/old_version.java</div>
+        <button class="browse-btn">Browse...</button>
+    </div>
+    
+    <div class="input-group">
+        <div class="label">New File:</div>
+        <div class="input-box">C:/projects/new_version.java</div>
+        <button class="browse-btn">Browse...</button>
+    </div>
+    
+    <button class="compare-btn">Compare Files</button>
+    
+    <div class="options">
+        <h3>Options:</h3>
+        <div class="checkbox">
+            <input type="checkbox" checked> Show line numbers
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" checked> Highlight changes
+        </div>
+        <div class="checkbox">
+            <input type="checkbox"> Verbose output
+        </div>
+    </div>
+</div>
+</body>
+</html>

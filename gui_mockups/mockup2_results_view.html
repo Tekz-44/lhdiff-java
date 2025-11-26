@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Courier New', monospace;
+    background: white;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 2px solid #333;
+    background: #f8f9fa;
+}
+.header {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 20px;
+    background: #ecf0f1;
+    border-bottom: 3px solid #3498db;
+}
+.files-container {
+    display: flex;
+    height: 500px;
+}
+.file-panel {
+    flex: 1;
+    border-right: 2px solid #333;
+    overflow: auto;
+}
+.file-panel:last-child {
+    border-right: none;
+}
+.file-header {
+    background: #34495e;
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+.code-line {
+    padding: 8px 12px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+}
+.line-number {
+    width: 40px;
+    color: #7f8c8d;
+    margin-right: 15px;
+    text-align: right;
+}
+.line-content {
+    flex: 1;
+    font-size: 14px;
+}
+.matched {
+    background: #d4edda;
+}
+.added {
+    background: #cce5ff;
+}
+.deleted {
+    background: #f8d7da;
+}
+.unchanged {
+    background: white;
+}
+.summary {
+    padding: 20px;
+    background: #ecf0f1;
+    border-top: 2px solid #333;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.legend-item {
+    display: flex;
+    align-items: center;
+}
+.legend-box {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    border: 1px solid #333;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">LHDiff - Comparison Results</div>
+    
+    <div class="files-container">
+        <div class="file-panel">
+            <div class="file-header">old_version.java</div>
+            <div class="code-line matched">
+                <div class="line-number">1</div>
+                <div class="line-content">public class Calculator {</div>
+            </div>
+            <div class="code-line matched">
+                <div class="line-number">2</div>
+                <div class="line-content">    public int add(int a, int b) {</div>
+            </div>
+            <div class="code-line matched">
+                <div class="line-number">3</div>
+                <div class="line-content">        return a + b;</div>
+            </div>
+            <div class="code-line matched">
+                <div class="line-number">4</div>
+                <div class="line-content">    }</div>
+            </div>
+            <div class="code-line deleted">
+                <div class="line-number">5</div>
+                <div class="line-content">    // Old comment</div>
+            </div>
+            <div class="code-line matched">
+                <div class="line-number">6</div>
+                <div class="line-content">    public int subtract(int a, int b) {</div>
+            </div>
+            <div class="code-line matched">
+                <div class="line-number">7</div>
+                <div class="line-content">        return a - b;</div>
+            </div>
+            <div class="code-line matched">
+                <div class="line-number">8</div>
+                <div class="line-content">    }</div>
+            </div>
+            <div class="code-line matched">
+                <div class="line-number">9</div>
+                <div class="line-content">}</div>
+            </div>
+        </div>
+        
+        <div class="file-panel">
+            <div class="file-header">new_version.java</div>
+            <div class="code-line matched">
+                <div class="line-number">1</div>
+                <div class="line-content">public class Calculator {</div>
+            </div>
+            <div class="code-line added">
+                <div class="line-number">2</div>
+                <div class="line-content">    // Added JavaDoc</div>
+            </div>
+            <div class="code-line matched">
+                <div class="line-number">3</div>
+                <div class="line-content">    public int add(int a, int b) {</div>
+            </div>
+            <div class="code-line matched">
+                <div class="line-number">4</div>
+                <div class="line-content">        return a + b;</div>
+            </div>
+            <div class="code-line matched">
+                <div class="line-number">5</div>
+                <div class="line-content">    }</div>
+            </div>
+            <div class="code-line matched">
+                <div class="line-number">6</div>
+                <div class="line-content">    public int subtract(int a, int b) {</div>
+            </div>
+            <div class="code-line matched">
+                <div class="line-number">7</div>
+                <div class="line-content">        return a - b;</div>
+            </div>
+            <div class="code-line matched">
+                <div class="line-number">8</div>
+                <div class="line-content">    }</div>
+            </div>
+            <div class="code-line matched">
+                <div class="line-number">9</div>
+                <div class="line-content">}</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="summary">
+        <div>Summary: 7 lines matched, 1 line added, 1 line deleted</div>
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-box matched"></div>
+                <span>Matched Lines</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box added"></div>
+                <span>Added Lines</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box deleted"></div>
+                <span>Deleted Lines</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
